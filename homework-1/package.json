@@ -1,0 +1,21 @@
+{
+  "name": "food-delivery-server-goit",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon index.js",
+    "debug": "node --inspect index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gomeryzh/food-delivery-server-goit.git"
+  },
+  "author": "Volodymyr Omelianiuk",
+  "license": "ISC",
+  "dependencies": {
+    "event-stream": "^4.0.1",
+    "morgan": "^1.9.1",
+    "nodemon": "^1.18.9"
+  }
+}
