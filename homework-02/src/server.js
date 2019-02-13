@@ -1,14 +1,15 @@
-const http = require("http");
-const url = require("url");
+const http = require('http');
+const url = require('url');
 
-const morgan = require("morgan");
-const router = require("./routes/router");
-const logger = morgan("combined");
+const morgan = require('morgan');
+const router = require('./routes/router');
+const getRouteHandler = require('./helpers/get-route-handler');
+const logger = morgan('combined');
 
 const startServer = port => {
   const server = http.createServer((req, res) => {
     const parsedUrl = url.parse(req.url);
-    const route = router[parsedUrl.pathname] || router.default;
+    const route = getRouteHandler(router, parsedUrl.pathname) || router.default;
 
     logger(req, res, () => route(req, res));
   });
